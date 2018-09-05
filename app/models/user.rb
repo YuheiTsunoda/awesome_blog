@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	validates :email, presence: true,
 					  format: { with: EMAIL_REGEX },
 					  uniqueness: true
-	has_secure_password		
+	has_secure_password		#bcrpt gem
 
 	def followers
 		Relationship.where(followed_id: id)
